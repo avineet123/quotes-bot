@@ -1,4 +1,4 @@
-Python 3.7.0
+Python 3.6.7
 Scrapy 1.5.1
 alabaster==0.7.12
 anaconda-client==1.7.2
