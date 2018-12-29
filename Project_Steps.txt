@@ -1,0 +1,5 @@
+Steps involved :-
+1.Extract data from website using Scrapy.
+2.Save the data in CSV using 'scrapy crawl quotes_job -o out_data1.csv -t csv'
+3.Extract the file using Pandas Dataframe
+4.Use the Chatterbot to train the data
