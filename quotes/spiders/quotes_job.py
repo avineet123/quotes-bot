@@ -20,8 +20,9 @@ class QuotesJobSpider(scrapy.Spider):
         for info in response.xpath('//div[contains(@id, "quotesList")]').extract():
             for t in info:
                 hrefs = response.xpath('//div[contains(@class, "qti-listm")]/a/@href').extract()
-                lines = response.xpath("//div[@class='qti-listm']//a/img/@alt").extract()
-
+                #lines = response.xpath("//div[@class='qti-listm']//a/img/@alt").extract().split(',')[0]
+                lines = [line.split(",") for line in response.xpath("//div[@class='qti-listm']//a/img/@alt").extract()]
+                lines = [line[0] for line in lines]
                 for item in zip(hrefs,lines):
                     new_item = QuotesItem()
                     new_item['hrefs'] = item[0]
